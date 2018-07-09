@@ -14,6 +14,8 @@
 		7717AF9C20F329B7008FFDD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7717AF9A20F329B7008FFDD9 /* LaunchScreen.storyboard */; };
 		7717AFA720F329B7008FFDD9 /* ios_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717AFA620F329B7008FFDD9 /* ios_testTests.swift */; };
 		7717AFB220F329B7008FFDD9 /* ios_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717AFB120F329B7008FFDD9 /* ios_testUITests.swift */; };
+		7717AFC020F37476008FFDD9 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7717AFBF20F37476008FFDD9 /* Empty.xib */; };
+		7717AFC220F37761008FFDD9 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717AFC120F37761008FFDD9 /* NewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		7717AFAD20F329B7008FFDD9 /* ios-testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7717AFB120F329B7008FFDD9 /* ios_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_testUITests.swift; sourceTree = "<group>"; };
 		7717AFB320F329B7008FFDD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7717AFBF20F37476008FFDD9 /* Empty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Empty.xib; path = "ios-test/Empty.xib"; sourceTree = "<group>"; };
+		7717AFC120F37761008FFDD9 /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		7717AF8520F329B6008FFDD9 = {
 			isa = PBXGroup;
 			children = (
+				7717AFBF20F37476008FFDD9 /* Empty.xib */,
 				7717AF9020F329B6008FFDD9 /* ios-test */,
 				7717AFA520F329B7008FFDD9 /* ios-testTests */,
 				7717AFB020F329B7008FFDD9 /* ios-testUITests */,
@@ -103,6 +108,7 @@
 				7717AF9820F329B7008FFDD9 /* Assets.xcassets */,
 				7717AF9A20F329B7008FFDD9 /* LaunchScreen.storyboard */,
 				7717AF9D20F329B7008FFDD9 /* Info.plist */,
+				7717AFC120F37761008FFDD9 /* NewViewController.swift */,
 			);
 			path = "ios-test";
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7717AF9C20F329B7008FFDD9 /* LaunchScreen.storyboard in Resources */,
+				7717AFC020F37476008FFDD9 /* Empty.xib in Resources */,
 				7717AF9920F329B7008FFDD9 /* Assets.xcassets in Resources */,
 				7717AF9720F329B6008FFDD9 /* Main.storyboard in Resources */,
 			);
@@ -256,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7717AFC220F37761008FFDD9 /* NewViewController.swift in Sources */,
 				7717AF9420F329B6008FFDD9 /* ViewController.swift in Sources */,
 				7717AF9220F329B6008FFDD9 /* AppDelegate.swift in Sources */,
 			);
