@@ -8,7 +8,31 @@
 
 import UIKit
 var count:Int = 0
-class ViewController: UIViewController,UITextFieldDelegate {
+class ViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 3
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 10
+    }
+
+    private func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> Int {
+        return 60
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(component)分区\(row)行数据"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        return 80
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print("\(component)分区\(row)行数据")
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,7 +127,54 @@ class ViewController: UIViewController,UITextFieldDelegate {
         view.addSubview(loading)
         loading.startAnimating()
         
-        //
+        //进度条
+        let progress = UIProgressView(frame: CGRect(x: 0, y: 580, width: 300, height: 40))
+        progress.progressTintColor = .red
+        progress.trackTintColor = .blue
+        progress.progress = 0.7
+        view.addSubview(progress)
+        
+        //stepper 步进控制器
+        let step = UIStepper()
+        view.addSubview(step)
+        step.center = CGPoint(x: 100, y: 100)
+        step.isContinuous = true
+        step.autorepeat = true
+        step.wraps = true
+        step.minimumValue = 1
+        step.maximumValue = 10
+        step.stepValue = 2
+        step.tintColor = .red
+        view.addSubview(step)
+        step.addTarget(self, action: #selector(pf3), for: .valueChanged)
+        
+        //选择器
+        let picker = UIPickerView(frame: CGRect(x: 0, y: 640, width: 300, height: 50))
+        view.addSubview(picker)
+        picker.dataSource = self
+        picker.delegate = self
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //提示框
+        let alertView = UIAlertController(title: "标题", message: "提示内容", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "确定", style: .default, handler: { (a) in
+            print(a.title!)
+        })
+        let action1 = UIAlertAction(title: "提示", style: .destructive, handler: { (a) in
+            print(a.title!)
+        })
+        let action2 = UIAlertAction(title: "取消", style: .cancel, handler: { (a) in
+            print(a.title!)
+        })
+        
+        alertView.addAction(action)
+        alertView.addAction(action1)
+        alertView.addAction(action2)
+        self.present(alertView, animated: true, completion: nil)
+        
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -134,6 +205,10 @@ class ViewController: UIViewController,UITextFieldDelegate {
     
     @objc func pf2(slider:UISlider){
         print(slider.value)
+    }
+    
+    @objc func pf3(step:UIStepper){
+        print(step.value)
     }
 
     override func didReceiveMemoryWarning() {
